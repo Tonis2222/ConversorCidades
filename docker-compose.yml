@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  conversorcidades:
+    image: conversorcidades
+    build:
+      context: .
+      dockerfile: ConversorCidades/Dockerfile

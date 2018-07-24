@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "7bfb98c5-3132-486e-bf11-da69e0f39eaa",
+		"name": "Conversor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Configuracoes",
+			"description": "",
+			"item": [
+				{
+					"name": "CriarConfiguracoes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarConfiguracoes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:32796/api/configuracoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "32796",
+							"path": [
+								"api",
+								"configuracoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AtualizarConfiguracoes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CriarConfiguracoes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"uf\": \"MG\",\n    \"formato\": 1,\n    \"caminhoCidades\": \"corpo.cidade.%\",\n    \"caminhoNomeCidades\": \"nome\",\n    \"caminhoHabitantesCidades\": \"populacao\",\n    \"caminhoBairros\": \"bairros.bairro.%\",\n    \"caminhoNomeBairros\": \"nome\",\n    \"caminhoHabitentesBairros\": \"populacao\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:32796/api/configuracoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "32796",
+							"path": [
+								"api",
+								"configuracoes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Conveter1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTmFkYSIsIm5iZiI6MTUzMjM5NjkzMSwiZXhwIjoxNTMyNDgzMzMxLCJpc3MiOiJDb252ZXJzb3IgQ2lkYWRlcyIsImF1ZCI6IlRvZG9zIn0.pR2YcfLOCB1LNRdp_synwG9vb5OXHK4kaxxL5OF104U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/plain"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<corpo>\r\n<cidade>\r\n<nome>Rio de Janeiro</nome>\r\n<populacao>10345678</populacao>\r\n<bairros>\r\n<bairro>\r\n<nome>Tijuca</nome>\r\n<regiao>Zona Norte</regiao>\r\n<populacao>135678</populacao>\r\n</bairro>\r\n<bairro>\r\n<nome>Botafogo</nome>\r\n<regiao>Zona Sul</regiao>\r\n<populacao>105711</populacao>\r\n</bairro>\r\n</bairros>\r\n</cidade>\r\n</corpo>"
+				},
+				"url": {
+					"raw": "http://localhost:32796/api/conversor/RJ",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32796",
+					"path": [
+						"api",
+						"conversor",
+						"RJ"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

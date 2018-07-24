@@ -1,8 +1,20 @@
 version: '3'
 
+
 services:
+  mongo:
+    image: 'mongo:3.4.1'
+    ports:
+      - '27017'
+
   conversorcidades:
     image: conversorcidades
     build:
       context: .
       dockerfile: ConversorCidades/Dockerfile
+    depends_on:
+      - mongo
+    links:
+      - mongo
+    environment:
+     - ConnectionStrings:MongoDB = "mongodb://mongo:27017"

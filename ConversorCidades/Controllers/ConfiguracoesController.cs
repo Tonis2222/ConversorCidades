@@ -35,8 +35,13 @@ namespace ConversorCidades.Controllers
     [Authorize]
     public async Task<IActionResult> Post([FromBody]ConfiguracaoDeConversaoDTO value)
     {
+      string erro;
       var configuracao = Mapper.Map<ConfiguracaoDeConversao>(value);
       configuracao.Id = Guid.NewGuid();
+      if (!configuracao.Validar(out erro))
+      {
+        return BadRequest(erro);
+      }
       await repositorio.SalvarConfiguracao(configuracao);
       return Ok();
     }
@@ -46,7 +51,12 @@ namespace ConversorCidades.Controllers
     [Authorize]
     public async Task<IActionResult> Put([FromBody]ConfiguracaoDeConversaoDTO value)
     {
+      string erro;
       var configuracao = Mapper.Map<ConfiguracaoDeConversao>(value);
+      if (!configuracao.Validar(out erro))
+      {
+        return BadRequest(erro);
+      }
       await repositorio.AtualizarConfiguracao(configuracao);
       return Ok();
     }

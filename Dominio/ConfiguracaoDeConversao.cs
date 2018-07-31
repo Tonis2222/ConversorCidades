@@ -17,7 +17,7 @@ namespace Dominio
     public string CaminhoHabitantesCidades { get; set; }
     public string CaminhoBairros { get; set; }
     public string CaminhoNomeBairros { get; set; }
-    public string CaminhoHabitentesBairros { get; set; }
+    public string CaminhoHabitantesBairros { get; set; }
 
     internal Queue<string> PegaCaminhoCidades()
     {
@@ -29,9 +29,60 @@ namespace Dominio
       return PegaCaminhos(CaminhoBairros);
     }
 
+    public bool Validar(out string erro)
+    {
+      erro = string.Empty;
+
+      if (string.IsNullOrEmpty(CaminhoCidades))
+      {
+        erro = "Caminho cidade não informado.";
+        return false;
+      }
+
+      if (string.IsNullOrEmpty(CaminhoBairros))
+      {
+        erro = "Caminho bairro não informado.";
+        return false;
+      }
+
+      if (string.IsNullOrEmpty(UF))
+      {
+        erro = "UF não informado.";
+        return false;
+      }
+
+      if (string.IsNullOrEmpty(CaminhoNomeCidades))
+      {
+        erro = "Caminho nome cidade não informado.";
+        return false;
+      }
+      if (string.IsNullOrEmpty(CaminhoNomeBairros))
+      {
+        erro = "Caminho nome bairro não informado.";
+        return false;
+      }
+      if (string.IsNullOrEmpty(CaminhoHabitantesBairros))
+      {
+        erro = "Caminho habitantes bairro não informado.";
+        return false;
+      }
+      if (string.IsNullOrEmpty(CaminhoHabitantesCidades))
+      {
+        erro = "Caminho habitantes cidade não informado.";
+        return false;
+      }
+      if (!Formato.IsDefined(typeof(Formato),Formato))
+      {
+        erro = "Formato não informado.";
+        return false;
+      }
+
+      return true;
+    }
+
     internal Queue<string> PegaCaminhoHabitantesBairro()
     {
-      return PegaCaminhos(CaminhoHabitentesBairros);
+      return PegaCaminhos(CaminhoHabitantesBairros);
     }
 
     internal Queue<string> PegaCaminhoNomeBairro()

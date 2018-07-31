@@ -34,7 +34,7 @@ namespace Testes
         CaminhoHabitantesCidades = "population",
         CaminhoBairros = "neighborhoods/%neighborhood",
         CaminhoNomeBairros = "name",
-        CaminhoHabitentesBairros = "population",
+        CaminhoHabitantesBairros = "population",
         UF = "TST"
       };
 
@@ -47,7 +47,7 @@ namespace Testes
         CaminhoHabitantesCidades = "population",
         CaminhoBairros = "neighborhoods/%neighborhood",
         CaminhoNomeBairros = "name",
-        CaminhoHabitentesBairros = "population",
+        CaminhoHabitantesBairros = "population",
         UF = "TST2"
       };
 

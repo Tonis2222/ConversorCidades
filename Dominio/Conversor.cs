@@ -123,7 +123,7 @@ namespace Dominio
       }
     }
 
-    private string BuscarPropriedadeNoObjeto(dynamic objeto, Queue<string> caminhos)
+    public string BuscarPropriedadeNoObjeto(dynamic objeto, Queue<string> caminhos)
     {
       string caminho;
       if (caminhos.TryDequeue(out caminho))

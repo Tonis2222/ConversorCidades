@@ -19,7 +19,7 @@ namespace Testes
         CaminhoHabitantesCidades = "population",
         CaminhoBairros = "neighborhoods.neighborhood.%",
         CaminhoNomeBairros = "name",
-        CaminhoHabitentesBairros = "population",
+        CaminhoHabitantesBairros = "population",
         UF = "MG"
       });
 
@@ -110,7 +110,7 @@ namespace Testes
         CaminhoHabitantesCidades = "populacao",
         CaminhoBairros = "bairros.bairro.%",
         CaminhoNomeBairros = "nome",
-        CaminhoHabitentesBairros = "populacao",
+        CaminhoHabitantesBairros = "populacao",
         UF = "RJ"
       });
 
@@ -152,7 +152,7 @@ namespace Testes
         CaminhoHabitantesCidades = "population",
         CaminhoBairros = "neighborhoods.%",
         CaminhoNomeBairros = "name",
-        CaminhoHabitentesBairros = "population",
+        CaminhoHabitantesBairros = "population",
         UF = "AC"
       });
 
